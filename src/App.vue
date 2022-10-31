@@ -1,21 +1,14 @@
-<script>
+<script setup>
+import { ref } from "vue"; 
 import ProductDisplay from "./components/ProductDisplay.vue";
 import ReviewForm from "./components/ReviewForm.vue";
 import ReviewList from "./components/ReviewList.vue";
 
-export default {
-  components: {
-    ProductDisplay,
-    ReviewForm,
-    ReviewList
-  },
-  data() {
-    return{
-      cart: 0,
-      premium: true,
-      reviews: []
-    }
-  },
+
+      let cart = ref(0)
+      let premium = ref(true)
+      const reviews = ref([])
+
   methods: {
     updateCart() {
       this.cart++
