@@ -5,22 +5,20 @@ import ReviewForm from "./components/ReviewForm.vue";
 import ReviewList from "./components/ReviewList.vue";
 
 
-      let cart = ref(0)
-      let premium = ref(true)
-      const reviews = ref([])
+let cart = ref(0)
+let premium = ref(true)
+const reviews = ref([])
 
-  methods: {
-    updateCart() {
-      this.cart++
-    },
-    removeFromCart() {
-      this.cart--
-    },
-    addReview(review) {
-      this.reviews.push(review)
-    }
-  }
+function updateCart() {
+  cart.value++
 }
+function removeFromCart() {
+  cart.value--
+}
+function addReview(review) {
+  reviews.value.push(review)
+}
+
 </script>
 
 <template>

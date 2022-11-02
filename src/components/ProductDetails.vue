@@ -1,11 +1,9 @@
-<script>
-export default {
-    props: {
-        details: {
-            type: Array
-        }
-    },
-}
+<script setup>
+
+defineProps({
+    details: Array
+});
+
 </script>
 
 <template>
