@@ -1,26 +1,23 @@
-<script>
-export default {
-  data() {
-    return {
-        name: '',
-        review: '',
-        rating: null,
-    };
-  },
-  methods: {
-    onSubmit() {
-        let productReview = {
-            name: this.name,
-            review: this.review,
-            rating: this.rating,
-        }
-        this.$emit('review-submitted', productReview)
-        this.name = ''
-        this.review = ''
-        this.rating = null
+<script setup>
+import { ref, defineEmits } from 'vue';
+
+let name = ref('');
+let review = ref('');
+let rating = ref(null);
+
+const emit = defineEmits(['review-submitted'])
+
+function onSubmit() {
+    let productReview = {
+        name: name.value,
+        review: review.value,
+        rating: rating.value,
     }
-  }
-};
+    emit('review-submitted', productReview)
+    name.value = ''
+    review.value = ''
+    rating.value = null
+}
 </script>
 
 <template>
